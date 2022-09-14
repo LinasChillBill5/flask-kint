@@ -1,9 +1,8 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
-@app.route("/<vardas>")
-def home(vardas):
-    return f"labas, {vardas}"
-    return "<hi>Cia mano pirmas psl</hi>"
+@app.route("/")
+def home():
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
